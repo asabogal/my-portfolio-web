@@ -8,8 +8,11 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-image: url(./images/desk.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 30vmax;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,8 +21,36 @@
   color: white;
 }
 
+.header-img {
+  background-image: url(./images/desk.jpg);
+  background-repeat: no-repeat;
+  border: 1px solid blue;
+  width: 500px;
+  height: 300px;
+  order:2;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption-text {
+  background-color: #111;
+  color: #fff;
+  padding: 18px 25px;
+  font-size: 25px;
+  letter-spacing: 10px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 @keyframes App-logo-spin {
