@@ -3,20 +3,21 @@ import { Card, CardImg, CardText, CardBody,
   CardTitle, CardLink } from 'reactstrap';
 
 const ProjectCard = (props) => {
+  const { id, name, description, tools, repoLink, image, url} = props.project
 
   const handleClick = () => {
-    alert("clicked!")
+    window.open(url)
   }
 
   return (
     <div>
       <Card>
       <CardBody>
-          <CardTitle>Project Name</CardTitle>
-          <CardImg onClick={handleClick} top width="100%" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Project Image" />
+          <CardTitle><h1>{name}</h1></CardTitle>
+          <CardImg onClick={handleClick} top width="100%" src={image} alt="Project Image" />
           
-          <CardText>Project description / built on ...</CardText>
-          <CardLink href="#">GitHub Repo</CardLink>
+          <CardText>{description}</CardText>
+          <CardLink href={repoLink}>GitHub Repo</CardLink>
         </CardBody>
       </Card>
     </div>
