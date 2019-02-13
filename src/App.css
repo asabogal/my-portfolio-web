@@ -2,12 +2,33 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.bckimg {
+  background-image: url(./images/desk.jpg);
+  min-height: 100%;
 }
 
-.App-header {
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* div {
+  display: block;
+} */
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+.top-header {
   background-image: url(./images/desk.jpg);
   background-size:100% 100%;
   min-height: 30vmax;
@@ -23,17 +44,30 @@
   color: #61dafb;
 }
 
+/* Headers */
+.portfolio-header {
+  background-image: url(./images/code.jpeg);
+  background-size:100% 100%;
+  min-height: 30vmax;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
 .caption {
   position: absolute;
   left: 0;
   top: 50%;
   width: 100%;
   text-align: center;
-  color: #000;
+  color: #282E34;
 }
 
 .caption-text {
-  background-color: #111;
+  background-color: #282E34;
   color: #fff;
   padding: 18px 25px;
   font-size: 25px;
@@ -42,11 +76,73 @@
   margin-right: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Portfolio Container */
+.portfolio {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-auto-rows: auto;
+  grid-gap: .5em;
+  padding-top: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
 }
+
+/* Project Cards */
+.project-card {
+  padding: 1em;
+  position: relative;
+  width: 100%;
+  border-radius: .1em;
+  box-shadow: .125em .125em .3125em rgba(0, 0, 0, 0.2);
+}
+ .project-img {
+  display: block;
+  width: 100%;
+  height: auto;
+} 
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgb(55, 68, 82);
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: scale(1.0);
+  box-shadow: .125em .125em .625em rgba(0, 0, 0, 0.5);
+}
+
+.text {
+  color: white;
+  font-size: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.card-content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+
