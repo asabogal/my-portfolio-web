@@ -1,5 +1,5 @@
 import React from 'react';
-import Radium from 'radium'
+import { Button } from 'reactstrap'
 
 const ProjectCard = (props) => {
   const { name, description, tools, repoLink, image, url } = props.project
@@ -12,20 +12,21 @@ const ProjectCard = (props) => {
       <div className="project-card">
         <h3>{name}</h3>
         <img className="project-img" src={image}/>
-          <div className="overlay" onClick={handleClick}>
+          <div className="overlay">
             <div className="text">
             <h5>{description}</h5>
             <br></br>
             <h6>{tools}</h6>
             <br></br>
             <hr></hr>
-            <a style={{fontSize: '16px'}} href={url}>Demo</a>
+            <Button className="btn-circle btn-xl" outline color="info" onClick={handleClick}>View App</Button>
             <br></br>
-            <a style={{fontSize: '16px'}} href={repoLink}>Repo Link</a>
+            <br></br>
+            <a className="App-link" style={{fontSize: '16px'}} href={repoLink}>Repo</a>
            </div>
          </div>
       </div>
   );
 };
 
-export default Radium(ProjectCard);
+export default ProjectCard;
