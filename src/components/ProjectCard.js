@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button } from 'reactstrap'
+import Radium from 'radium'
+import { card } from '../RadiumStyles'
 
 const ProjectCard = (props) => {
   const { name, description, tools, repoLink, image, url } = props.project
@@ -9,24 +10,18 @@ const ProjectCard = (props) => {
   }
 
   return (
-      <div className="project-card">
-        <h3>{name}</h3>
-        <img className="project-img" src={image}/>
-          <div className="overlay">
-            <div className="text">
-            <h5>{description}</h5>
-            <br></br>
-            <h6>{tools}</h6>
-            <br></br>
-            <hr></hr>
-            <Button className="btn-circle btn-xl" outline color="info" onClick={handleClick}>View App</Button>
-            <br></br>
-            <br></br>
-            <a className="App-link" style={{fontSize: '16px'}} href={repoLink}>Repo</a>
-           </div>
-         </div>
+      <div style={card.base} onClick={handleClick}>
+        <h3 style={card.title}><u>{name}</u></h3>
+        <br></br>
+          <img className="project-img" style={card.image} src={image}/>  
+          <h5>{description}</h5>
+          <br></br>
+          <br></br>
+          <h6>{tools}</h6>
+          <br></br>
+          <a className="App-link" style={{fontSize: '16px'}} href={repoLink}>Repo</a>
       </div>
   );
 };
 
-export default ProjectCard;
+export default Radium(ProjectCard);

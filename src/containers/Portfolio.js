@@ -1,8 +1,10 @@
 import React from 'react';
 import ProjectCard from '../components/ProjectCard'
 import { projectData } from '../projectData'
+import Radium from 'radium'
+import { portfolio } from '../RadiumStyles'
 
-class Projects extends React.Component {
+class Portfolio extends React.Component {
 
   state = {  }
 
@@ -12,7 +14,7 @@ class Projects extends React.Component {
   
     const renderProjects = sorted.map(project => {
       return (
-        <ProjectCard key={project.id} project={project}/>
+          <ProjectCard key={project.id} project={project}/>
       )
     })
       
@@ -26,15 +28,15 @@ class Projects extends React.Component {
       </header>
 
       <br></br>
+
+        <div style={portfolio.base}>
+         {renderProjects}
+        </div>
         
-      <div className="portfolio">
-       {renderProjects}
-      </div>
-       
     </div>
       
     );
   }
 }
 
-export default Projects;
+export default Radium(Portfolio);
